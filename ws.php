@@ -12,10 +12,8 @@ $server->on('open', function($server, $req) {
 });
 
 $server->on('message', function($server, $frame) {
-    echo "received message: {$frame->data}\n";
-    var_dump($frame->data);
-    $server->push($frame->fd, json_encode(["hello", "world"]));
-
+//    echo "received message: {$frame->data}\n";
+//    $server->push($frame->fd, json_encode(["hello", "world"]));
         foreach ($server->connections as $fd) {
         // 需要先判断是否是正确的websocket连接，否则有可能会push失败
         if ($server->isEstablished($fd)) {
