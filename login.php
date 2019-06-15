@@ -13,11 +13,11 @@ $server->on('open', function($server, $req) {
     //连接数据库
     $swoole_mysql = new Swoole\Coroutine\MySQL();
     $swoole_mysql->connect([
-        'host' => '192.168.3.1',
+        'host' => '127.0.0.1',
         'port' => 3306,
         'user' => 'root',
-        'password' => 'root',
-        'database' => 'ceshi',
+        'password' => '123456',
+        'database' => 'app',
     ]);
 });
 
@@ -47,11 +47,11 @@ $server->on('message', function($server, $frame) {
     //连接数据库
     $swoole_mysql = new Swoole\Coroutine\MySQL();
     $swoole_mysql->connect([
-        'host' => '192.168.3.1',
+        'host' => '127.0.0.1',
         'port' => 3306,
         'user' => 'root',
-        'password' => 'root',
-        'database' => 'ceshi',
+        'password' => '123456',
+        'database' => 'app',
     ]);
 
     $sql="select * from user_reg where user_name='$user_name'";
